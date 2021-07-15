@@ -60,27 +60,27 @@ const App = () => {
 
     <div className="speeches-container">
       <div className="speech-box">
-        <h6>default settings</h6>
+        <h6>default Speech</h6>
         <Speech
           text="I have the default settings" />
       </div>
 
       <div className="speech-box">
-        <h6>default settings</h6>
+        <h6>Voice Prop change</h6>
         <Speech
           text="I have altered my voice"
           voice="Google UK English Female" />
       </div>
 
       <div className="speech-box">
-        <h6>default settings</h6>
+        <h6>Style change (fails!!)</h6>
         <Speech
           // styles={buttonStyle}
           text="I have changed the colour of the play button and made it smaller" />
       </div>
 
       <div className="speech-box">
-        <h6>default settings</h6>
+        <h6>Pitch, rate, volume, lang & voice props</h6>
         <Speech
           text="I have altered the pitch, rate and volume of my voice"
           pitch="0.5"
@@ -91,7 +91,7 @@ const App = () => {
       </div>
 
       <div className="speech-box">
-        <h6>default settings</h6>
+        <h6>Default props values</h6>
         <Speech
           text="I have all properties set to their default"
           pitch="1"
@@ -102,7 +102,7 @@ const App = () => {
       </div>
 
       <div className="speech-box">
-        <h6>default settings</h6>
+        <h6>Displaying buttons (fails!!)</h6>
         <Speech
           stop={true}
           pause={true}
@@ -111,7 +111,7 @@ const App = () => {
       </div>
 
       <div className="speech-box">
-        <h6>default settings</h6>
+        <h6>textAsButton & displayText props</h6>
         <Speech
           textAsButton={true}
           displayText="Hello"
