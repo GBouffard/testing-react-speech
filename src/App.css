@@ -16,6 +16,19 @@ body {
   height: 100%;
 }
 
-.App {
+.speeches-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: .5rem;
+  background-color: #3e2723;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.speech-box {
+  background-color: #80cbc4;
+  border: 1px solid #fff;
+  padding: 20px;
+  font-size: 30px;
   text-align: center;
 }
