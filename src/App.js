@@ -102,54 +102,52 @@ const App = () => {
 
     <div className="speeches-container">
       <div className="speech-box">
-        <h6>default Speech</h6>
+        <div className="title">default Usage (CSS Buggy by default)</div>
         <Speech
           text="I have the default settings" />
       </div>
 
       <div className="speech-box">
-        <h6>voice Prop change</h6>
-        <Speech
-          text="I have altered my voice"
-          voice="Google UK English Female" />
-      </div>
-
-      <div className="speech-box">
-        <h6>Add style (all css properties / svg buggy by default)</h6>
+        <div className="title">Add style, styling all CSS properties (Ugly!)</div>
         <Speech
           styles={style}
           text="I added some style! yo yo yo yo" />
       </div>
 
+      {/* There are css bugs with the svg icons display - fixed with cvg-icon-display-fix class */}
       <div className="speech-box svg-icon-display-fix">
-        <h6>Add minimal style (with svg css fix)</h6>
+        <div className="title">Minimal style for the Play button</div>
         <Speech
           styles={simpleButton}
           text="I fixed the svg because I kick ass!" />
       </div>
 
+      {/* There are css bugs with the svg icons display - fixed with cvg-icon-display-fix class
+      There are css bugs with the multiple buttons display - fixed with multiple-buttons-display-fix class */}
       <div className="speech-box svg-icon-display-fix multiple-buttons-display-fix">
-        <h6>Add minimal style (with svg css fix & rs-container css fix for multiple buttons) for all buttons</h6>
+        <div className="title">Display all control buttons (with minimal style)</div>
         <Speech
           styles={simpleAllButtons}
-          // The booleans need to be added for the buttons to show
+          // The booleans are mandatory for the buttons to show
           stop={true}
           pause={true}
           resume={true}
           text="This is a very long sentence because I want to test if it works and stuff and maybe pause it" />
       </div>
 
-      <div className="speech-box">
-        <h6>textAsButton & displayText props</h6>
+      <div className="speech-box center-button">
+        <div className="title">Adding text in the play button</div>
         <Speech
+          styles={simpleButton}
           textAsButton={true}
           displayText="Hello"
           text="I have text displayed as a button" />
       </div>
 
-      <div className="speech-box">
-        <h6>Pitch, rate, volume, lang & voice props</h6>
+      <div className="speech-box center-button">
+        <div className="title">Change Pitch, rate, volume, lang & voice props</div>
         <Speech
+          styles={simpleButton}
           text="I have altered the pitch, rate and volume of my voice"
           pitch="0.5"
           rate="0.5"
@@ -158,9 +156,10 @@ const App = () => {
           voice="Daniel" />
       </div>
 
-      <div className="speech-box">
-        <h6>Default props values</h6>
+      <div className="speech-box center-button">
+        <div className="title">Default props values</div>
         <Speech
+          styles={simpleButton}
           text="I have all properties set to their default"
           pitch="1"
           rate="1"
@@ -169,13 +168,12 @@ const App = () => {
           voice="Google UK English Male" />
       </div>
 
-      <div className="speech-box">
-        <h6>Displaying buttons (fails!!)</h6>
+      <div className="speech-box center-button">
+        <div className="title">voice Prop change</div>
         <Speech
-          stop={true}
-          pause={true}
-          resume={true}
-          text="I am displaying all buttons" />
+          styles={simpleButton}
+          text="I have altered my voice"
+          voice="Google UK English Female" />
       </div>
     </div>
   </div>
