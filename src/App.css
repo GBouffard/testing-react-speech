@@ -38,14 +38,23 @@ body {
   text-align: center;
 }
 
-/* also fix the display */
-.with-svg-fix {
+/* fix svg icon display */
+.svg-icon-display-fix {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.with-svg-fix button svg {
+.svg-icon-display-fix button svg {
   display: block;
   height: 100%;
+}
+
+/* fix multiple buttons display */
+.multiple-buttons-display-fix .rs-container {
+  display: flex;
+}
+
+.multiple-buttons-display-fix .rs-container button {
+  margin: 0 10px;
 }

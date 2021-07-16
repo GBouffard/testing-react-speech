@@ -52,11 +52,14 @@ const minimalButtonStyle = {
   alignItems: 'center'
 }
 
-const simpleButtons = {
+const minimalHoverButtonStyle = {
+  backgroundColor: 'white'
+}
+
+// nb all buttons need to be listed even if not used
+const simpleButton = {
   play: {
-    hover: {
-      backgroundColor: 'white',
-    },
+    hover: minimalHoverButtonStyle,
     button: minimalButtonStyle,
   },
   pause: {
@@ -70,6 +73,25 @@ const simpleButtons = {
   resume: {
     hover: {},
     button: {},
+  },
+};
+
+const simpleAllButtons = {
+  play: {
+    hover: minimalHoverButtonStyle,
+    button: minimalButtonStyle,
+  },
+  pause: {
+    hover: minimalHoverButtonStyle,
+    button: minimalButtonStyle,
+  },
+  stop: {
+    hover: minimalHoverButtonStyle,
+    button: minimalButtonStyle,
+  },
+  resume: {
+    hover: minimalHoverButtonStyle,
+    button: minimalButtonStyle,
   },
 };
 
@@ -99,11 +121,22 @@ const App = () => {
           text="I added some style! yo yo yo yo" />
       </div>
 
-      <div className="speech-box with-svg-fix">
+      <div className="speech-box svg-icon-display-fix">
         <h6>Add minimal style (with svg css fix)</h6>
         <Speech
-          styles={simpleButtons}
+          styles={simpleButton}
           text="I fixed the svg because I kick ass!" />
+      </div>
+
+      <div className="speech-box svg-icon-display-fix multiple-buttons-display-fix">
+        <h6>Add minimal style (with svg css fix & rs-container css fix for multiple buttons) for all buttons</h6>
+        <Speech
+          styles={simpleAllButtons}
+          // The booleans need to be added for the buttons to show
+          stop={true}
+          pause={true}
+          resume={true}
+          text="This is a very long sentence because I want to test if it works and stuff and maybe pause it" />
       </div>
 
       <div className="speech-box">
