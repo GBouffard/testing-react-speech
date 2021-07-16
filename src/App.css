@@ -68,3 +68,16 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.full-row {
+  grid-column: span 2; 
+}
+
+.displayFlex {
+  display: flex;
+  justify-content: center;
+}
+
+.flexColumn {
+  flex-direction: column;
+}

@@ -95,6 +95,134 @@ const simpleAllButtons = {
   },
 };
 
+const voices = [
+  {
+    name: 'Daniel',
+    country: '🇬🇧',
+    message: 'My name is Daniel and I am from nowhere'
+  },
+  {
+    name: 'Alice',
+    country: '🇮🇹',
+    message: 'My name is Alice and I am from Italy'
+  },
+  {
+    name: 'Amelie',
+    country: '🇫🇷',
+    message: 'My name is Amelie and I am from France'
+  },
+  {
+    name: 'Diego',
+    country: '🇪🇸',
+    message: 'My name is Diego and I am from Spain'
+  },
+  {
+    name: 'Ellen',
+    country: '🇳🇱',
+    message: 'My name is Ellen and I am from Netherlands'
+  },
+  {
+    name: 'Fiona',
+    country: '🇬🇧',
+    message: 'My name is Fiona and I am from nowhere'
+  },
+  {
+    name: 'Ioana',
+    country: '🇷🇴',
+    message: 'My name is Ioana and I am from Romania'
+  },
+  {
+    name: 'Karen',
+    country: '🇦🇺',
+    message: 'My name is Karen and I am from Australia'
+  },
+  {
+    name: 'Kyoko',
+    country: '🇯🇵',
+    message: 'My name is Kyoko and I am from Japan'
+  },
+  {
+    name: 'Laura',
+    country: '🇸🇰',
+    message: 'My name is Laura and I am from Slovakia'
+  },
+  {
+    name: 'Lee',
+    country: '🇦🇺',
+    message: 'My name is Lee and I am from Australia'
+  },
+  {
+    name: 'Mariska',
+    country: '🇭🇺',
+    message: 'My name is Mariska and I am from Hungary'
+  },
+  {
+    name: 'Mei-Jia',
+    country: '🇨🇳',
+    message: 'My name is Mei-Jia and I am from China'
+  },
+  {
+    name: 'Melina', country: '🇬🇷', message: 'My name is Melina and I am from Greece'
+  },
+  {
+    name: 'Milena', country: '🇷🇺', message: 'My name is Milena and I am from Russia'
+  },
+  {
+    name: 'Moira', country: '🇮🇪', message: 'My name is Moira and I am from Ireland'
+  },
+  {
+    name: 'Monica', country: '🇪🇸', message: 'My name is Monica and I am from Spain'
+  },
+  {
+    name: 'Nora', country: '🇳🇴', message: 'My name is Nora and I am from Norway'
+  },
+  {
+    name: 'Paulina', country: '🇲🇽', message: 'My name is Paulina and I am from Mexico'
+  },
+  {
+    name: 'Samantha', country: '🇺🇸', message: 'My name is Samantha and I am from USA'
+  },
+  {
+    name: 'Sara', country: '🇩🇰', message: 'My name is Sara and I am from Denmark'
+  },
+  {
+    name: 'Satu', country: '🇫🇮', message: 'My name is Satu and I am from Finland'
+  },
+  {
+    name: 'Tessa', country: '🇿🇦', message: 'My name is Tessa and I am from South Africa'
+  },
+  {
+    name: 'Thomas', country: '🇫🇷', message: 'My name is Thomas and I am from France'
+  },
+  {
+    name: 'Xander', country: '🇳🇱', message: 'My name is Xander and I am from Netherlands'
+  },
+  {
+    name: 'Yelda', country: '🇹🇷', message: 'My name is Yelda and I am from Turkey'
+  },
+  {
+    name: 'Yuri', country: '🇷🇺', message: 'My name is Yuri and I am from Russia'
+  },
+  {
+    name: 'Zosia', country: '🇵🇱', message: 'My name is Zosia and I am from Poland'
+  },
+  {
+    name: 'Zuzana', country: '🇨🇿', message: 'My name is Zuzana and I am from Czech Republic'
+  }
+]
+
+const smallButton = {
+  ...simpleButton,
+  play: {
+    ...simpleButton.play,
+    button: {
+      ...minimalButtonStyle,
+      height: '30px',
+      width: '30px',
+      margin: '0 5px'
+    }
+  }
+}
 
 const App = () => {
   return <div className="App">
@@ -104,14 +232,14 @@ const App = () => {
       <div className="speech-box">
         <div className="title">default Usage (CSS Buggy by default)</div>
         <Speech
-          text="I have the default settings" />
+          text="This is the default Usage" />
       </div>
 
       <div className="speech-box">
         <div className="title">Add style, styling all CSS properties (Ugly!)</div>
         <Speech
           styles={style}
-          text="I added some style! yo yo yo yo" />
+          text="I added some style on all the see hess hess properties!" />
       </div>
 
       {/* There are css bugs with the svg icons display - fixed with cvg-icon-display-fix class */}
@@ -119,7 +247,7 @@ const App = () => {
         <div className="title">Minimal style for the Play button</div>
         <Speech
           styles={simpleButton}
-          text="I fixed the svg because I kick ass!" />
+          text="I fixed the ayssveegee because I kick ass!" />
       </div>
 
       {/* There are css bugs with the svg icons display - fixed with cvg-icon-display-fix class
@@ -141,42 +269,50 @@ const App = () => {
           styles={simpleButton}
           textAsButton={true}
           displayText="Hello"
-          text="I have text displayed as a button" />
+          text="Hello, that's what the button says"
+          voice="Ioana" />
       </div>
 
       <div className="speech-box center-button">
         <div className="title">Change Pitch, rate, volume, lang & voice props</div>
         <Speech
           styles={simpleButton}
-          text="I have altered the pitch, rate and volume of my voice"
-          pitch="0.5"
-          rate="0.5"
-          volume="0.1"
-          lang="en-GB"
-          voice="Daniel" />
+          text="I am Daniel. I have altered the pitch, rate and volume of my voice"
+          pitch="0.1" // 1 default value / min=0 max=2 step=1
+          rate="0.5" // aka the speed / 1 default value / max=3.5 min=0.5 step=0.5
+          volume="0.3" // 1 default value / max=1 min=0 step=0.1
+          lang="en-GB" // 1 default value / EN-GB, EN-US are teh options
+          voice="Daniel" // default value of the browser I guess
+        />
       </div>
 
-      <div className="speech-box center-button">
-        <div className="title">Default props values</div>
-        <Speech
-          styles={simpleButton}
-          text="I have all properties set to their default"
-          pitch="1"
-          rate="1"
-          volume="1"
-          lang="en-GB"
-          voice="Google UK English Male" />
-      </div>
-
-      <div className="speech-box center-button">
-        <div className="title">voice Prop change</div>
-        <Speech
-          styles={simpleButton}
-          text="I have altered my voice"
-          voice="Google UK English Female" />
+      <div className="speech-box full-row">
+        <div className="title">All the possible voices</div>
+        <div className="displayFlex">
+          {voices.map(({ name, message, country }) => {
+            return <div className="displayFlex flexColumn">
+              {country}
+              <Speech
+                styles={smallButton}
+                text={message}
+                voice={name} />
+            </div>
+          })}
+        </div>
       </div>
     </div>
-  </div>
+    {/* possible voices:
+        Daniel
+        Alice 🇮🇹
+        Amelie 🇫🇷
+        Diego 🇪🇸
+        Ellen 🇳🇱
+        Fiona
+        Ioana 🇷🇴
+        Google UK English Male
+        Google UK English Female
+        Google US English Female */}
+  </div >
 }
 
 export default App;
