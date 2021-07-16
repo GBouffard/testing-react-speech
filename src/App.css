@@ -37,3 +37,15 @@ body {
   font-size: 24px;
   text-align: center;
 }
+
+/* also fix the display */
+.with-svg-fix {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.with-svg-fix button svg {
+  display: block;
+  height: 100%;
+}

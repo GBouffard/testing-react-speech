@@ -43,6 +43,36 @@ const style = {
   },
 };
 
+const minimalButtonStyle = {
+  height: '40px',
+  width: '40px',
+  cursor: 'pointer',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+}
+
+const simpleButtons = {
+  play: {
+    hover: {
+      backgroundColor: 'white',
+    },
+    button: minimalButtonStyle,
+  },
+  pause: {
+    hover: {},
+    button: {},
+  },
+  stop: {
+    hover: {},
+    button: {},
+  },
+  resume: {
+    hover: {},
+    button: {},
+  },
+};
+
 
 const App = () => {
   return <div className="App">
@@ -63,10 +93,17 @@ const App = () => {
       </div>
 
       <div className="speech-box">
-        <h6>Add some style (main button)</h6>
+        <h6>Add style (all css properties / svg buggy by default)</h6>
         <Speech
           styles={style}
           text="I added some style! yo yo yo yo" />
+      </div>
+
+      <div className="speech-box with-svg-fix">
+        <h6>Add minimal style (with svg css fix)</h6>
+        <Speech
+          styles={simpleButtons}
+          text="I fixed the svg because I kick ass!" />
       </div>
 
       <div className="speech-box">
