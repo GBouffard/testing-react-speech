@@ -2,55 +2,45 @@ import './App.css';
 import Speech from 'react-speech';
 
 const style = {
-  container: {},
-  text: {},
-  buttons: {},
   play: {
     hover: {
-      backgroundColor: 'GhostWhite'
+      backgroundColor: 'blue',
+      color: 'white'
     },
     button: {
-      width: '28',
-      height: '28',
+      padding: '5px',
+      fontFamily: 'Helvetica',
+      fontSize: '1.0em',
       cursor: 'pointer',
       pointerEvents: 'none',
-      outline: 'none',
-      backgroundColor: 'yellow',
-      border: 'solid 1px rgba(255,255,255,1)',
-      borderRadius: 6
+      outline: '#4CAF50 solid 10px',
+      backgroundColor: 'red',
+      border: '3px solid orange',
+      borderRadius: '15px',
+      // if we define height and width, the play icons shows but it's not scaled or centered
+      height: '50px',
+      width: '200px',
+      // to center or scale  it
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
     },
+    // the svg needs to be styled via css with
+    // display: block;
+    // height: 100%;
   },
   pause: {
-    play: {},
-    hover: {}
+    hover: {},
+    button: {},
   },
   stop: {
-    play: {
-      hover: {},
-      button: {}
-    },
-    resume: {
-      play: {
-        hover: {},
-        button: {}
-      }
-    }
-  }
-};
-
-const buttonStyle = {
-  play: {
-    button: {
-      width: '28',
-      height: '28',
-      cursor: 'pointer',
-      pointerEvents: 'none',
-      outline: 'none',
-      backgroundColor: 'yellow',
-      border: 'solid 1px rgba(255,255,255,1)',
-      borderRadius: 6
-    },
-  }
+    hover: {},
+    button: {},
+  },
+  resume: {
+    hover: {},
+    button: {},
+  },
 };
 
 
@@ -66,17 +56,25 @@ const App = () => {
       </div>
 
       <div className="speech-box">
-        <h6>Voice Prop change</h6>
+        <h6>voice Prop change</h6>
         <Speech
           text="I have altered my voice"
           voice="Google UK English Female" />
       </div>
 
       <div className="speech-box">
-        <h6>Style change (fails!!)</h6>
+        <h6>Add some style (main button)</h6>
         <Speech
-          // styles={buttonStyle}
-          text="I have changed the colour of the play button and made it smaller" />
+          styles={style}
+          text="I added some style! yo yo yo yo" />
+      </div>
+
+      <div className="speech-box">
+        <h6>textAsButton & displayText props</h6>
+        <Speech
+          textAsButton={true}
+          displayText="Hello"
+          text="I have text displayed as a button" />
       </div>
 
       <div className="speech-box">
@@ -108,14 +106,6 @@ const App = () => {
           pause={true}
           resume={true}
           text="I am displaying all buttons" />
-      </div>
-
-      <div className="speech-box">
-        <h6>textAsButton & displayText props</h6>
-        <Speech
-          textAsButton={true}
-          displayText="Hello"
-          text="I have text displayed as a button" />
       </div>
     </div>
   </div>
