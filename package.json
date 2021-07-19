@@ -1,6 +1,6 @@
 {
-  "name": "testing-read-more-react",
-  "homepage": "https://gbouffard.github.io/testing-react-speech-recognition/",
+  "name": "testing-react-speech",
+  "homepage": "https://gbouffard.github.io/testing-react-speech/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
